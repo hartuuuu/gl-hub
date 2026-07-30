@@ -1,8 +1,8 @@
 // ===========================
-// GLVerse v0.1
+// GLHub v0.1
 // ===========================
 
-console.log("Welcome to GLVerse 💜");
+console.log("Welcome to GLHub 💜");
 
 // Future JavaScript features:
 // - Search
