@@ -293,3 +293,17 @@ width:100%;
 }
 
 }
+
+.dark{
+
+    --bg:#1D1D1D;
+
+    --card:#2B2B2B;
+
+    --text:#F3F3F3;
+
+    --sub:#C9C9C9;
+
+    --accent:#9CCB9E;
+
+}
