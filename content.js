@@ -1,87 +1,79 @@
-const cards = [
+const category = document.querySelector(".category");
+const message = document.querySelector(".message");
+const button = document.getElementById("randomBtn");
+const content = document.getElementById("content");
 
-{
-    type: "thought",
-    icon: "💭",
-    title: "Thought",
-    text: "Progress rarely introduces itself. Most of the time, it feels exactly like being lost."
-},
+let lastIndex = -1;
+let clicks = 0;
 
-{
-    type: "fortune",
-    icon: "🥠",
-    title: "Fortune Cookie",
-    text: "Something good is taking longer than you expected. Keep waiting."
-},
+const buttonTexts = [
+    "again.",
+    "one more.",
+    "show me something.",
+    "keep going.",
+    "another one.",
+    "surprise me.",
+    "next.",
+    "still here."
+];
 
-{
-    type: "reminder",
-    icon: "🌱",
-    title: "Reminder",
-    text: "You don't have to carry the whole semester today. Just today."
-},
+function randomButton(){
 
-{
-    type: "achievement",
-    icon: "🏆",
-    title: "Achievement Unlocked",
-    text: "Opened this website. +5 Curiosity."
-},
+    button.textContent =
+    buttonTexts[Math.floor(Math.random()*buttonTexts.length)];
 
-{
-    type: "fact",
-    icon: "🌎",
-    title: "Tiny Fact",
-    text: "Honey never spoils."
-},
-
-{
-    type: "thought",
-    icon: "💭",
-    title: "Thought",
-    text: "You don't need to become someone else. You just need to keep becoming yourself."
-},
-
-{
-    type: "fortune",
-    icon: "🥠",
-    title: "Fortune Cookie",
-    text: "One day, today's worries will struggle to remember your name."
-},
-
-{
-    type: "reminder",
-    icon: "☕",
-    title: "Reminder",
-    text: "Drink water before deciding your life is falling apart."
-},
-
-{
-    type: "story",
-    icon: "📖",
-    title: "Tiny Story",
-    text: "A bamboo tree spends years growing roots before anyone sees it grow. Some seasons happen underground."
-},
-
-{
-    type: "song",
-    icon: "🎵",
-    title: "Today's Song",
-    text: "Pick a song that reminds you of rainy afternoons. Sit with it for a while."
-},
-
-{
-    type: "laugh",
-    icon: "😂",
-    title: "Loading...",
-    text: "Loading motivation... ███████░░ 73%... Error. Using determination instead."
-},
-
-{
-    type: "receipt",
-    icon: "🧾",
-    title: "Receipt",
-    text: "Items received:\n✓ One random thought\n✓ One tiny smile\nTOTAL: Come back anytime."
 }
 
-];
+function showCard(){
+
+    clicks++;
+
+    let index;
+
+    do{
+
+        index=Math.floor(Math.random()*cards.length);
+
+    }while(index===lastIndex);
+
+    lastIndex=index;
+
+    const card=cards[index];
+
+    category.innerHTML=
+    `${card.icon} ${card.title}`;
+
+    message.innerHTML=
+    card.text.replace(/\n/g,"<br>");
+
+    content.classList.remove("fade");
+
+    void content.offsetWidth;
+
+    content.classList.add("fade");
+
+    randomButton();
+
+    if(clicks===50){
+
+        category.innerHTML="⭐ Legendary";
+
+        message.innerHTML=`
+        You've been here
+        for quite a while.
+
+        <br><br>
+
+        I hope you found
+        something worth keeping.
+
+        <br><br>
+
+        Thanks for staying.
+        `;
+
+    }
+
+}
+
+button.addEventListener("click",showCard);
