@@ -2,78 +2,69 @@ const category = document.querySelector(".category");
 const message = document.querySelector(".message");
 const button = document.getElementById("randomBtn");
 const content = document.getElementById("content");
+const title = document.getElementById("title");
 
 let lastIndex = -1;
 let clicks = 0;
+let dark = false;
 
 const buttonTexts = [
-    "again.",
-    "one more.",
-    "show me something.",
-    "keep going.",
     "another one.",
+    "again.",
+    "keep going.",
     "surprise me.",
     "next.",
-    "still here."
+    "show me something.",
+    "still curious?"
 ];
 
-function randomButton(){
-
+function randomButton() {
     button.textContent =
-    buttonTexts[Math.floor(Math.random()*buttonTexts.length)];
-
+        buttonTexts[Math.floor(Math.random() * buttonTexts.length)];
 }
 
-function showCard(){
-
-    clicks++;
+function showCard() {
 
     let index;
 
-    do{
+    do {
+        index = Math.floor(Math.random() * cards.length);
+    } while (index === lastIndex);
 
-        index=Math.floor(Math.random()*cards.length);
+    lastIndex = index;
+    clicks++;
 
-    }while(index===lastIndex);
+    const card = cards[index];
 
-    lastIndex=index;
-
-    const card=cards[index];
-
-    category.innerHTML=
-    `${card.icon} ${card.title}`;
-
-    message.innerHTML=
-    card.text.replace(/\n/g,"<br>");
+    category.textContent = `${card.icon} ${card.title}`;
+    message.innerHTML = card.text.replace(/\n/g, "<br>");
 
     content.classList.remove("fade");
-
     void content.offsetWidth;
-
     content.classList.add("fade");
 
     randomButton();
 
-    if(clicks===50){
-
-        category.innerHTML="⭐ Legendary";
-
-        message.innerHTML=`
-        You've been here
-        for quite a while.
-
-        <br><br>
-
-        I hope you found
-        something worth keeping.
-
-        <br><br>
-
-        Thanks for staying.
-        `;
-
+    if (clicks === 25) {
+        setTimeout(() => {
+            alert("✨ You've been here for a while.\n\nThanks for staying.");
+        }, 300);
     }
-
 }
 
-button.addEventListener("click",showCard);
+button.addEventListener("click", showCard);
+
+// Secret Dark Mode
+let secretClicks = 0;
+
+title.addEventListener("click", () => {
+    secretClicks++;
+
+    if (secretClicks >= 7) {
+        dark = !dark;
+
+        document.body.classList.toggle("dark");
+
+        secretClicks = 0;
+    }
+});
