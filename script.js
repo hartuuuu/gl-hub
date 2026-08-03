@@ -1,1 +1,91 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>little corner</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="noise"></div>
+
+<main>
+
+    <div class="card">
+
+        <div class="top">
+
+            <p class="emoji">:)</p>
+
+            <h1 id="title">
+                little corner
+            </h1>
+
+            <p class="subtitle">
+                Take whatever you need.
+                <br>
+                Leave whenever you want.
+            </p>
+
+        </div>
+
+        <div id="content">
+
+            <span class="category">
+                Welcome
+            </span>
+
+            <h2 class="message">
+
+                This isn't a motivational website.
+
+                <br><br>
+
+                It's just a tiny place on the internet.
+
+                <br><br>
+
+                Stay for five seconds...
+
+                <br>
+
+                or five minutes.
+
+            </h2>
+
+        </div>
+
+        <button id="randomBtn">
+            Explore
+        </button>
+
+    </div>
+
+</main>
+
+<footer>
+
+    <p>
+
+        You found a little corner of the internet.
+
+    </p>
+
+</footer>
+
+<script src="content.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
