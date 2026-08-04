@@ -3,9 +3,7 @@ const message = document.querySelector(".message");
 const button = document.getElementById("randomBtn");
 const content = document.getElementById("content");
 const title = document.getElementById("title");
-const counter = document.querySelector("#counter span");
-const footer = document.getElementById("footerText");
-const subtitle = document.querySelector(".subtitle");
+
 
 let lastIndex = -1;
 let clicks = 0;
