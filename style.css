@@ -307,3 +307,37 @@ width:100%;
     --accent:#9CCB9E;
 
 }
+
+#counter{
+
+    margin-top:25px;
+
+    color:#888;
+
+    font-size:14px;
+
+}
+
+#counter span{
+
+    color:var(--accent);
+
+    font-weight:700;
+
+}
+
+footer{
+
+    margin-top:30px;
+
+    text-align:center;
+
+}
+
+#footerText{
+
+    color:#999;
+
+    transition:.3s;
+
+}
