@@ -1,7 +1,9 @@
-
-/* =========================
-   little corner
-========================= */
+:root{
+    --bg:#f6f3ee;
+    --card:#ffffff;
+    --text:#2d2d2d;
+    --accent:#7d9b7e;
+}
 
 *{
     margin:0;
@@ -9,335 +11,85 @@
     box-sizing:border-box;
 }
 
-:root{
-
-    --bg:#F7F5F2;
-    --card:#ffffff;
-    --text:#2D2D2D;
-    --sub:#777777;
-    --accent:#7D9B7E;
-
-}
-
 body{
-
+    font-family:'Inter',sans-serif;
     background:var(--bg);
-
-    color:var(--text);
-
-    font-family:Inter,sans-serif;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
 
     min-height:100vh;
 
-    overflow-x:hidden;
-
-}
-
-/* Grain */
-
-body::before{
-
-    content:"";
-
-    position:fixed;
-
-    inset:0;
-
-    background-image:
-    radial-gradient(rgba(0,0,0,.025) 1px, transparent 1px);
-
-    background-size:7px 7px;
-
-    opacity:.4;
-
-    pointer-events:none;
-
-}
-
-/* Main */
-
-main{
-
-    width:100%;
-
     display:flex;
-
     justify-content:center;
+    align-items:center;
 
-    padding:40px 20px;
-
+    padding:20px;
 }
-
-/* Card */
 
 .card{
-
-    width:100%;
-
-    max-width:620px;
-
     background:var(--card);
 
-    border-radius:28px;
+    width:100%;
+    max-width:500px;
 
-    padding:55px;
+    padding:40px;
 
-    box-shadow:
-    0 20px 60px rgba(0,0,0,.08);
+    border-radius:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
 
     text-align:center;
-
-    transition:.4s;
-
 }
-
-.card:hover{
-
-    transform:translateY(-3px);
-
-}
-
-/* Top */
 
 .emoji{
-
-    font-size:34px;
-
-    margin-bottom:12px;
-
+    font-size:30px;
 }
 
 h1{
-
-    font-family:"DM Serif Display",serif;
-
-    font-size:52px;
-
-    font-weight:400;
-
-    margin-bottom:15px;
-
-    cursor:pointer;
-
+    margin-top:10px;
 }
 
 .subtitle{
-
-    color:var(--sub);
-
-    line-height:1.7;
-
-    margin-bottom:45px;
-
+    color:#777;
+    margin-top:15px;
+    line-height:1.6;
 }
 
-/* Category */
+#content{
+    margin:40px 0;
+}
 
 .category{
-
-    display:inline-block;
-
-    background:#EEF4EE;
-
+    background:#eef4ee;
     color:var(--accent);
 
-    padding:8px 18px;
+    padding:8px 16px;
 
     border-radius:999px;
 
-    font-weight:600;
-
-    font-size:.85rem;
-
-    margin-bottom:25px;
-
+    display:inline-block;
 }
-
-/* Message */
 
 .message{
+    margin-top:25px;
 
-    font-family:"DM Serif Display",serif;
+    line-height:1.8;
+
+    font-size:22px;
 
     font-weight:400;
-
-    line-height:1.75;
-
-    font-size:31px;
-
-    margin-bottom:45px;
-
 }
 
-/* Button */
-
 button{
-
     border:none;
-
-    outline:none;
-
-    cursor:pointer;
-
-    padding:18px 42px;
-
-    border-radius:999px;
 
     background:var(--accent);
 
     color:white;
 
+    padding:15px 30px;
+
+    border-radius:999px;
+
     font-size:16px;
 
-    font-weight:600;
-
-    transition:.25s;
-
-}
-
-button:hover{
-
-    transform:translateY(-2px);
-
-    box-shadow:0 10px 25px rgba(125,155,126,.3);
-
-}
-
-button:active{
-
-    transform:scale(.96);
-
-}
-
-/* Footer */
-
-footer{
-
-    padding:25px;
-
-    color:#999;
-
-    font-size:14px;
-
-    text-align:center;
-
-}
-
-/* Animation */
-
-.fade{
-
-    animation:fade .45s ease;
-}
-
-@keyframes fade{
-
-    from{
-
-        opacity:0;
-        transform:translateY(15px);
-
-    }
-
-    to{
-
-        opacity:1;
-        transform:translateY(0);
-
-    }
-
-}
-
-/* Mobile */
-
-@media(max-width:640px){
-
-.card{
-
-padding:35px 25px;
-
-border-radius:22px;
-
-}
-
-h1{
-
-font-size:40px;
-
-}
-
-.message{
-
-font-size:24px;
-
-}
-
-.subtitle{
-
-font-size:15px;
-
-}
-
-button{
-
-width:100%;
-
-}
-
-}
-
-.dark{
-
-    --bg:#1D1D1D;
-
-    --card:#2B2B2B;
-
-    --text:#F3F3F3;
-
-    --sub:#C9C9C9;
-
-    --accent:#9CCB9E;
-
-}
-
-#counter{
-
-    margin-top:25px;
-
-    color:#888;
-
-    font-size:14px;
-
-}
-
-#counter span{
-
-    color:var(--accent);
-
-    font-weight:700;
-
-}
-
-footer{
-
-    margin-top:30px;
-
-    text-align:center;
-
-}
-
-#footerText{
-
-    color:#999;
-
-    transition:.3s;
-
+    cursor:pointer;
 }
